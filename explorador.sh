@@ -146,8 +146,7 @@ printf "${GREEN} Continuamos creando la base de datos ${NC}\n" && echo
 echo > datos.js
 
 echo use explorerdb >> datos.js
-echo 'db.createUser( { user: "laberinto", pwd: "@Laberinto.01", roles: [ "readWrite" ] } )' >> datos.js
-
+echo 'db.createUser( { user: "iquidus", pwd: "3xp!0reR", roles: [ "readWrite" ] } )' >> datos.js
 echo exit >> datos.js
 
 mongo < datos.js
