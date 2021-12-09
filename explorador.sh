@@ -192,7 +192,8 @@ git clone https://github.com/team-exor/eiquidus explorer
 cd explorer && npm install --production
 cp ./settings.json.template ./settings.json
 
-echo && echo ' Ejecuta npm start para iniciar el explorador '
+echo && echo ' Ejecuta npm start o npm run start-pm2 '
+echo && echo ' para iniciar el explorador '
 echo && echo ' Recuerda revisar los datos de acceso '
 echo && echo ' del usuario a la base de datos '
 
