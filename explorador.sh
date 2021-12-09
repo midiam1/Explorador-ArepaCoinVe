@@ -162,6 +162,29 @@ clear
 printf "${BBLUE} Proyectos Himmeros ${NC}\n"
 printf "${BBLUE} sistemas que funcionan ${NC}\n" && echo
 
+printf "${GREEN} Instalamos el NVM [ Node Version Manager ] ${NC}\n" && echo
+
+sudo apt install libcurl4 curl -y 
+curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+
+# Esto activa el NVM
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Esto instala la versión de NVM que vamos a usar, que será la 16
+
+nvm install 16
+nvm use 16
+
+sleep 10
+
+clear
+
+printf "${BBLUE} Proyectos Himmeros ${NC}\n"
+printf "${BBLUE} sistemas que funcionan ${NC}\n" && echo
+
 printf "${GREEN} Continuamos instalando el explorador ${NC}\n" && echo
 
 git clone https://github.com/team-exor/eiquidus explorer
