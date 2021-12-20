@@ -128,7 +128,7 @@ clear # Limpio la pantalla porque soy un ser limpio
 	printf "${BLUE} Verifico que NodeJS esté operativo ${NC}\n" && echo
 	node -v && echo
 
-	# Instalaci�n de Mongo
+	# Instalación de Mongo
 	printf "${GREEN} Instalación de mongo ${NC}\n" && echo
 	sudo apt install mongodb -y
 
@@ -185,6 +185,6 @@ clear # Limpio la pantalla porque soy un ser limpio
 	echo && echo ' para iniciar el explorador '
 	echo && echo ' Recuerda revisar los datos de acceso '
 	echo && echo ' del usuario a la base de datos '
-	echo && echo ' en ${GREEN}settings.json${NC} '
+	printf "${GREEN} en ${GREEN}settings.json${NC} "
 
 exit
