@@ -86,116 +86,99 @@ NC='\033[0m' # No Color
 
 clear # Limpio la pantalla porque soy un ser limpio
 
-printf "${BBLUE} Proyectos Himmeros ${NC}\n"
-printf "${BBLUE} sistemas que funcionan ${NC}\n" && echo
+	printf "${BBLUE} Proyectos Himmeros ${NC}\n"
+	printf "${BBLUE} sistemas que funcionan ${NC}\n" && echo
 
-printf "${GREEN} Hago un Upgrade + Update ${NC}\n" && echo
+	printf "${GREEN} Hago un Upgrade + Update ${NC}\n" && echo
 
-sudo apt upgrade -y 
-sudo apt update -y
+	sudo apt upgrade -y 
+	sudo apt update -y
 
-echo
+	echo
 
-# Instalación de MC
-printf "${GREEN} Instalación de MC ${NC}\n" && echo
-sudo apt install mc -y
+# InstalaciÃ³n de MC
+	printf "${GREEN} InstalaciÃ³n de MC ${NC}\n" && echo
+	sudo apt install mc -y
 
-echo
+	echo
 
-# Instalación de GIT
-printf "${GREEN} Instalación de git ${NC}\n" && echo
-sudo apt install git -y
+# InstalaciÃ³n de GIT
+	printf "${GREEN} InstalaciÃ³n de git ${NC}\n" && echo
+	sudo apt install git -y
 
-echo
+	echo
 
-# Instalación de NodeJS
-printf "${GREEN} Instalación de NodeJS ${NC}\n" && echo
-sudo apt install nodejs -y
+# Instalaciï¿½n de NodeJS
+	printf "${GREEN} InstalaciÃ³n de NodeJS ${NC}\n" && echo
+	sudo apt install nodejs -y
 
-echo
+	echo
 
-# Instalación de NPM
-printf "${GREEN} Instalación de NPM ${NC}\n" && echo
-sudo apt install npm -y
+# InstalaciÃ³n de NPM
+	printf "${GREEN} InstalaciÃ³n de NPM ${NC}\n" && echo
+	sudo apt install npm -y
 
-echo
+	sudo npm cache clean -f
+	sudo npm install -g n
+	sudo n stable
+	sudo npm install npm@latest
 
-printf "${BLUE} Verifico que NodeJS esté operativo ${NC}\n" && echo
-node -v && echo
+	echo
 
-# Instalación de Mongo
-printf "${GREEN} Instalación de mongo ${NC}\n" && echo
-sudo apt install mongodb -y
+	printf "${BLUE} Verifico que NodeJS estÃ© operativo ${NC}\n" && echo
+	node -v && echo
 
-echo
+	# Instalaciï¿½n de Mongo
+	printf "${GREEN} InstalaciÃ³n de mongo ${NC}\n" && echo
+	sudo apt install mongodb -y
 
-printf "${BLUE} Verifico que mongo esté operativo ${NC}\n" && echo
-mongo --eval 'db.runCommand({ connectionStatus: 1 })'
+	echo
 
-echo
+	printf "${BLUE} Verifico que mongo estÃ© operativo ${NC}\n" && echo
+	mongo --eval 'db.runCommand({ connectionStatus: 1 })'
 
-printf "${RED} 10 segundos para continuar ${NC}\n" && echo
-sleep 10
-clear # Limpio la pantalla para continuar
+	echo
 
-printf "${BBLUE} Proyectos Himmeros ${NC}\n"
-printf "${BBLUE} sistemas que funcionan ${NC}\n" && echo
+	printf "${RED} 10 segundos para continuar ${NC}\n" && echo
+	sleep 10
+	clear # Limpio la pantalla para continuar
 
-printf "${GREEN} Continuamos creando la base de datos ${NC}\n" && echo
+	printf "${BBLUE} Proyectos Himmeros ${NC}\n"
+	printf "${BBLUE} sistemas que funcionan ${NC}\n" && echo
 
-echo > datos.js
+	printf "${GREEN} Continuamos creando la base de datos ${NC}\n" && echo
 
-echo use explorerdb >> datos.js
-echo 'db.createUser( { user: "iquidus", pwd: "3xp!0reR", roles: [ "readWrite" ] } )' >> datos.js
-echo exit >> datos.js
+	echo > datos.js
 
-mongo < datos.js
+	echo use explorerdb >> datos.js
+	echo 'db.createUser( { user: "iquidus", pwd: "3xp!0reR", roles: [ "readWrite" ] } )' >> datos.js
+	echo exit >> datos.js
 
-echo
-echo " Listo !"
-echo " A instalar el Explorador !"
+	mongo < datos.js
 
-sleep 10
+	echo
+	echo " Listo !"
+	echo " A instalar el Explorador !"
 
-clear
+	sleep 10
 
-printf "${BBLUE} Proyectos Himmeros ${NC}\n"
-printf "${BBLUE} sistemas que funcionan ${NC}\n" && echo
+	clear
 
-printf "${GREEN} Instalamos el NVM [ Node Version Manager ] ${NC}\n" && echo
+	clear
 
-sudo apt install libcurl4 curl -y 
-curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+	printf "${BBLUE} Proyectos Himmeros ${NC}\n"
+	printf "${BBLUE} sistemas que funcionan ${NC}\n" && echo
 
-# Esto activa el NVM
+	printf "${GREEN} Continuamos instalando el explorador ${NC}\n" && echo
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+	git clone https://github.com/team-exor/eiquidus explorer
 
-# Esto instala la versión de NVM que vamos a usar, que será la 16
+	cd explorer && npm install --production
+	cp ./settings.json.template ./settings.json
 
-nvm install 16
-nvm use 16
-
-sleep 10
-
-clear
-
-printf "${BBLUE} Proyectos Himmeros ${NC}\n"
-printf "${BBLUE} sistemas que funcionan ${NC}\n" && echo
-
-printf "${GREEN} Continuamos instalando el explorador ${NC}\n" && echo
-
-git clone https://github.com/team-exor/eiquidus explorer
-
-cd explorer && npm install --production
-cp ./settings.json.template ./settings.json
-
-echo && echo ' Ejecuta npm start o npm run start-pm2 '
-echo && echo ' para iniciar el explorador '
-echo && echo ' Recuerda revisar los datos de acceso '
-echo && echo ' del usuario a la base de datos '
-
+	echo && echo ' Ejecuta npm start o npm run start-pm2 '
+	echo && echo ' para iniciar el explorador '
+	echo && echo ' Recuerda revisar los datos de acceso '
+	echo && echo ' del usuario a la base de datos '
 
 exit
