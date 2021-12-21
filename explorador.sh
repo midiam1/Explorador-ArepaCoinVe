@@ -181,10 +181,10 @@ clear # Limpio la pantalla porque soy un ser limpio
 	printf "${BBLUE} sistemas que funcionan ${NC}\n" && echo
 	printf "${GREEN} Continuamos instalando el explorador ${NC}\n" && echo
 
-	echo && echo ' Ejecuta npm start o npm run start-pm2 '
-	echo && echo ' para iniciar el explorador '
-	echo && echo ' Recuerda revisar los datos de acceso '
-	echo && echo ' del usuario a la base de datos '
-	printf "${GREEN} en ${GREEN}settings.json${NC} "
+	printf "${GREEN}Ejecuta npm start o npm run start-pm2\n"
+	printf "${GREEN}para iniciar el explorador \n"
+	printf "${GREEN}Recuerda revisar los datos de acceso \n"
+	printf "${GREEN}del usuario a la base de datos \n"
+	printf "${GREEN} en ${GREEN}settings.json${NC}\n"
 
 exit
