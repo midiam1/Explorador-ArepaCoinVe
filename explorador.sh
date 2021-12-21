@@ -160,12 +160,8 @@ clear # Limpio la pantalla porque soy un ser limpio
 	echo " Listo !"
 	echo " A instalar el Explorador !"
 
-	sleep 10
-
-	clear
-
-	clear
-
+	sleep 10 && clear
+	
 	printf "${BBLUE} Proyectos Himmeros ${NC}\n"
 	printf "${BBLUE} sistemas que funcionan ${NC}\n" && echo
 
@@ -181,10 +177,13 @@ clear # Limpio la pantalla porque soy un ser limpio
 	printf "${BBLUE} sistemas que funcionan ${NC}\n" && echo
 	printf "${GREEN} Continuamos instalando el explorador ${NC}\n" && echo
 
-	printf "${GREEN}Ejecuta npm start o npm run start-pm2\n"
-	printf "${GREEN}para iniciar el explorador \n"
-	printf "${GREEN}Recuerda revisar los datos de acceso \n"
-	printf "${GREEN}del usuario a la base de datos \n"
-	printf "${GREEN} en ${GREEN}settings.json${NC}\n"
+	printf "${RED} Ejecuta npm start o npm run start-pm2\n"
+	printf "${RED} para iniciar el explorador \n"
+	printf "${RED} Recuerda revisar los datos de acceso \n"
+	printf "${RED} del usuario a la base de datos \n"
+	printf "${RED} en ${GREEN}settings.json${NC}\n"
+
+# Creo el directorio para la criptomoneda
+	mkdir ${HOME}/.arepacoin
 
 exit
